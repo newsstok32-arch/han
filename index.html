@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aan Bloon</title>
+    <title>Aan Cihuy</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Splash Screen -->
     <div id="splash">
-        <h1>Selamat Datang di Aan Bloon</h1>
+        <h1>Selamat Datang di Aan Cihuy</h1>
         <input id="nama" type="text" placeholder="Nama kamu">
         <button onclick="masuk()">Masuk</button>
     </div>
@@ -20,8 +20,9 @@
             <li><a href="                    
             <li><a href="#artikel">Artikel</a></li>
             <li><a href="                          
-            <li><a href="#pengunjung">Pengunjung</a></li>
+            <li><a href="#setting">Setting</a></li>
         </ul>
+        <button onclick="masukMenu()">Masuk</button>
     </nav>
 
     <!-- Konten -->
@@ -29,7 +30,7 @@
         <!-- Home -->
         <section id="home">
             <h2>Home</h2>
-            <p>Selamaat datang di Aan Bloon!</p>
+            <p>Selamaat datang di Aan Cihuy!</p>
         </section>
 
         <!-- Artikel -->
@@ -44,6 +45,13 @@
             <button onclick="whatsapp()">WA (085656806260)</button>
             <button onclick="joinWA()">Join Channel WA</button>
         </section>
+
+        <!-- Setting -->
+        <section id="setting">
+            <h2>Setting</h2>
+            <input type="file" id="tema" accept="image/*">
+            <button onclick="gantiTema()">Ganti Tema</button>
+        </section>
     </div>
 
     <!-- Footer -->
@@ -57,6 +65,10 @@
             document.getElementById('menu').style.display = 'block';
         }
 
+        function masukMenu() {
+            alert('Masuk ke menu utama!');
+        }
+
         function whatsapp() {
             window.open('https:                                 
         }
@@ -64,7 +76,15 @@
         function joinWA() {
             window.open('https://whatsapp.com/channel/0029Vb6tMhk7oQhirqDgIc0f', '_blank');
         }
+
+        function gantiTema() {
+            const tema = document.getElementById('tema').files[0];
+            if (tema) {
+                document.body.style.backgroundImage = `url(${URL.createObjectURL(tema)})`;
+            } else {
+                alert('Pilih gambar tema!');
+            }
+        }
     </script>
 </body>
-      </html>
-                  
+</html>
